@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/handler.css">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http:localhost8080/">フォーム送信画面へ</a>
+    
+        {{range .}}
+                <h1>追加日時</h1>
+                <h1>{{.Today}}</h1>
+                <h1>開始時間</h1>
+                <h1>{{.Starttime}}</h1>
+                <h1>終了時間</h1>
+                <h1>{{.Finishtime}}</h1>
+                <h1>***********************</h1>
+            {{end}}
+   
+    <a href="http:localhost8080/">フォーム送信画面へ</a>
+</body>
+</html>
+
