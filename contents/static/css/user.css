@@ -1,0 +1,63 @@
+body{
+    margin: 0px;
+    background-color: #ff728a;
+    text-align: center;
+}
+
+form{
+    margin: 50px;
+}
+  .time{
+    color:aliceblue;
+  }
+
+  .box {
+    margin:50px 0px 50px 0px;
+    width:  300px;                /* 横幅を200pxに指定 */
+    height: 370px;               /* 横幅を200pxに指定 */
+    border: 5px solid #0a0009;      /* わかりやすくボーダーを引く */
+    overflow-y: scroll;          /* 縦方向にスクロール可能にする */
+    text-align: center;
+    padding: 5px;
+  }
+
+  
+  .button {
+    display       : inline-block;
+    border-radius : 16%;          /* 角丸       */
+    font-size     : 18pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 36px;   /* 余白       */
+    background    : #ff4da6;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 1px 1px 17px #666666;  /* 影の設定 */
+    border        : 2px solid #ff4da6;    /* 枠の指定 */
+  }
+  .button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #ff4da6;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
+
+  a{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    box-shadow:1px 1px 10px #bd01aa;
+    background-color: rgba(242, 0, 255, 0.304);
+  }
+ 
+  
+    .block{
+        display: block;
+        background-color:#000000 ;
+    }
+    .times{
+        font-size: 45px;
+        color: #8ef803;
+    }
+    
+ 

@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/select.css">
+    <link rel="stylesheet" href="/static/css/user.css">
     <title>Document</title>
 </head>
 
 <body>
-    <a href="http://localhost:8080/main">メイン画面へ</a>
-    <h1>{{first .}}〜{{last .}}で選んでください!</h1>
-    <form action="http://localhost:8080/userConfirm" method="post">
-        <div class="box">
-            {{ range . }}
-    
-                <label class="block" > <input type="radio"  name="message" value="{{.}}" required>{{- . }}</label>
-            {{ end }}
+    <center>
+        <div class="time">
+            <h1>{{first .}}〜{{last .}}</h1>
+            <h3>の時間に予約をできます！</h3>
         </div>
-        <input type="submit" value="送信">
-        
-    </form>
-    <a href="http://localhost:8080/main">メイン画面へ</a>
+
+        <form action="http://localhost:8080/userConfirm" method="post">
+                <div class="box">
+                    {{ range . }}
+                    <div class="times">
+                        <label class="block" > <input type="radio"  name="message" value="{{.}}" required>{{- . }}</label>
+                    </div>
+                    {{ end }}
+                </div>
+                <input type="submit" value="送信" class="button">
+            
+        </form>
+    </center>
+    <a href="http://localhost:8080/main">メイン画面に戻る</a>
 </body>
 
 </html>

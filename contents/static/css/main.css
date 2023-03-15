@@ -1,0 +1,176 @@
+
+
+.header h1{
+    font-size: 80px;
+    display: inline;
+    color: rgb(247, 97, 97);
+    text-shadow:2px 2px 2px white;
+}
+body{
+    margin: 0px;
+    background-image:url(../img/coffee.jpg);
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+    text-align: center;
+  
+    
+      background-position: center right;
+      position: top center;
+      height: 500px;
+      width: 100%;
+      color: white;
+      font-family: 'Eczar', serif;
+}
+h1{
+    margin-top: 50px;
+    width: 40%;
+    font-size: 30px;
+    color: rgba(212, 243, 8, 0.654);
+    text-align: center;
+}
+
+
+
+
+
+p{
+    text-align: center;
+    font-size: 32px;
+    margin: 0px;
+}
+a {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.355) ;
+    background-color: rgba(4, 233, 203, 0.465);
+   
+    width: 50%;
+    text-decoration: none;
+   
+  }
+
+  a:hover{
+    color: rgba(4, 233, 202, 0.761);
+    background-color:rgba(0, 0, 0, 0.56) ;
+  }
+
+ 
+a.btn{
+    padding: 0.5em;
+    border-radius: 3rem;
+  }
+  a.btn:before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url("../Icon/bell.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    background-position: right;
+
+  }
+  a.btn:hover {
+    background: #bcf50072;
+  }
+
+
+/* レスポンシブ対応 */
+@media screen and (max-width:500px) {
+    body{
+        margin: 0px;
+        background-color: black;
+        color: black;
+        background-image: none;
+    }
+    h1{
+        font-size: 20px;
+        color: rgba(182, 216, 8, 0.763);
+    }
+    a{
+        font-size: 40px;
+        color: rgba(4, 233, 202, 0.761);
+        width: 50%;
+        text-decoration: none;
+        background-color: rgba(66, 231, 243, 0.401);
+    } 
+    .header{
+    background-image: url(../img/coffee.jpg);
+    background-position: center ;
+    text-align: center;
+    height: 310px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.724);
+    font-family: 'Eczar', serif;
+    }
+    
+    .header h1{
+        font-size: 60px;
+        display: inline;
+        color: rgb(247, 97, 97);
+    }
+    br {
+        display: block;
+        content: "";
+        margin: 10px 0;
+    }
+    p{
+        font-size: 16px;
+        -webkit-text-stroke:0.2px black;
+    }
+
+    .left{
+        text-align: left;
+        display: inline-block;
+    }
+
+    a.btn:before {
+        content: "";
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+        padding: 0px;
+        background: url("../Icon/bell.png") no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        background-position: right;
+    
+      }
+
+      .box{
+        display: inline;
+        height: 70px;
+        width: 70px;
+      }
+      .fuwafuwa {
+        animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+        background: url(../img/majinn.webp) no-repeat center center / 200px auto;
+        display: inline-block;
+        transition: 1.5s ease-in-out;
+        width: 50%;
+        height: 50%;
+        margin-top: 5px;
+      }
+      
+      @keyframes fuwafuwa {
+        0% {
+          transform:translate(0, 0) rotate(-7deg);
+        }
+        50% {
+          transform:translate(0, -7px) rotate(0deg);
+        }
+        100% {
+          transform:translate(0, 0) rotate(7deg);
+        }
+      }
+
+    
+    
+}
