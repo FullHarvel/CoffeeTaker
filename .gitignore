@@ -1,1 +1,3 @@
+#gitignoreに反映させるには、gitignoreは作ったリポジトリの直下に置く必要があり
+#もし一回git addをしてしまっている場合にgit git rm -r --cached ./contents/.env  
 .env

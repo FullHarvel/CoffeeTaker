@@ -1,0 +1,80 @@
+body{
+    margin: 50px;
+    background-color: #f4f2db;
+    text-align: center;
+}
+.box {
+    width: 260px;/* 紙の横幅 100%にすると全幅表示に */
+    padding: 15px;
+    margin: 2em auto;
+    background: #f7f092;/* 紙の色 */
+    color: #000;/* 文字色 */
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.03);transform:rotate(2deg);
+    word-break: break-all;
+ }
+ .box p {
+     margin: 0; 
+     padding: 0;
+     font-size: 0.9em;
+ }
+ .box_tape {
+     width: 50%;
+     height: 35px;
+     margin: -25px auto 0;
+     background: #989898;
+     transform: rotate(-3deg);
+     opacity: 0.1;
+ }
+ .box_title {
+     text-align: center;
+     font-size: 1.3em!important;
+     margin-top: 10px!important;
+ }
+
+ .box p{
+    text-align: center;
+ }
+
+ .contents{
+    margin:100px;
+    border-bottom: 4px solid rgb(0, 255, 0);
+ }
+
+ a{
+    text-decoration: none;
+    font-size: 30px;
+ }
+
+ /* aタグの装飾 */
+ .cp_link {
+	display: inline-block;
+    color: rgb(0, 217, 255);
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+	vertical-align: bottom;
+	overflow: hidden;
+}
+.cp_link span {
+	display: inline-block;
+	position: relative;
+	padding: 0.1em 0.3em;
+	transition: .4s;
+	transform-origin: 50% 0%;
+	transform-style: preserve-3d;
+}
+.cp_link span:after {
+	display: inline-block;
+	position: absolute;
+	padding: 0.1em 0.3em;
+	left: 0;
+	top: 0;
+	content: attr(data-text);
+	color:rgb(0, 255, 102);
+	background-color: #f4f2db;
+	transform-origin: 50% 0%;
+	transform: translate3d(0, 105%, 0) rotateX(-90deg);
+}
+.cp_link:hover span {
+	background-color: #f4f2db;
+	transform: translate3d(0, 0, -30px) rotateX(90deg);
+}

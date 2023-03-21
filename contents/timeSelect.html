@@ -4,23 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/user.css">
+    <link rel="stylesheet" href="/static/css/timeSelect.css">
     <title>Document</title>
 </head>
 <body>
-    <a href="http:localhost8080/">フォーム送信画面へ</a>
-    
-        {{range .}}
-                <h1>追加日時</h1>
-                <h1>{{.Today}}</h1>
-                <h1>開始時間</h1>
-                <h1>{{.Starttime}}</h1>
-                <h1>終了時間</h1>
-                <h1>{{.Finishtime}}</h1>
-                <h1>***********************</h1>
-            {{end}}
+    <a href="http://localhost:8080/index" class="cp_link">
+        <span data-text="時間指定画面に戻る">時間指定画面に戻る</span>
+    </a>
+
+    {{range .}}
+    <div class="contents">
+        <div class="box">
+            <div class="box_tape"> </div>
+            <p class="box_title">追加日時</p>
+            <p>{{.Today}}</p>
+            </div>
+            
+            <div class="box">
+            <div class="box_tape"> </div>
+            <p class="box_title">開始時間</p>
+            <p>{{.Starttime}}</p>
+            </div>
+
+            <div class="box">
+            <div class="box_tape"> </div>
+            <p class="box_title">終了時間</p>
+            <p>{{.Finishtime}}</p>
+            </div>  
+    </div>
+    {{end}}
    
-    <a href="http:localhost8080/">フォーム送信画面へ</a>
-</body>
+    <a href="http://localhost:8080/index" class="cp_link">
+        <span data-text="時間指定画面に戻る">時間指定画面に戻る</span>
+    </a>
 </html>
 

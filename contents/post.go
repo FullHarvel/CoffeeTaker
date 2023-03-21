@@ -17,6 +17,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
+// github.com/lib/pqはgo mod init github.com/lib/pqとgo get github.com/lib/pq"をしたらエラーが出なくなった
 // グローバル変数の定義
 var host string
 var port string
@@ -56,9 +57,9 @@ func main() {
 
 	//ルーターを設定
 	//最初のページ
-	http.HandleFunc("/main", mainPage)
+	http.HandleFunc("/", mainPage)
 	//管理者の予約時間を指定するページ
-	http.HandleFunc("/", index)
+	http.HandleFunc("/index", index)
 	//予約時間を指定した時に出るページ
 	http.HandleFunc("/handler", handler)
 	//予約の履歴を参照するページ
@@ -450,11 +451,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	//開始時関より終了時間の方が早かった時のバリデーション
 	var message string
 	if date1.After(date2) {
-		message = "開始時間より終了時間が先にきてしまっているようだね！"
+		message = "開始時間より終了時間を後にしてください！"
 		renderTemplate(w, "index.html", Data{Message: message})
 		return
 	} else if date1.Equal(date2) {
-		message = "どうも同じ時間を指定してしまっているみたいだ"
+		message = "開始時間と終了時間が同じになっています"
 		renderTemplate(w, "index.html", Data{Message: message})
 		return
 	}

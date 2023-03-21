@@ -4,45 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/handler.css">
+    <link rel="stylesheet" href="/static/css/index.css">
 
     <title>Document</title>
 </head>
 <body>
-    <!-- <label for="time">予定の時刻：</label>
-<input
-  type="time"
-  list="data-list"
-  name="予定の時刻"
-  min="06:00"
-  max="07:00"
-  list="data-list" 0"
-/><span></span>
-<datalist id="data-list">
-  <option value="06:00"></option>
-  <option value="06:30"></option>
-  <option value="07:00"></option>
-</datalist> -->
-    <h1>予約時間の指定画面</h1>
-    <form action="http://localhost:8080/handler" method="post">
-        <label for="name">開始時間を入れてください</label>
-        <input type="time" name="starttime" value="" list="data-list" required>
-        <label for="age">終了時間を入れてください</label>
-        <input type="time" name="finishtime" value="" list="data-list" required>
-
-        <h5>デフォルトの値を送信するかデフォルトの値を送信するか指定してください</h5><br>
-        <label for=""><input type="radio" value="default" name="judgeDataForm" required>デフォルトの値で送信</label><br>
-        <label for=""><input type="radio" value="assignment" name="judgeDataForm" required>指定の値で送信</label><br>
-
-        <input type="submit" value="送信">
-        <h2>{{if .Message}}{{.Message}}{{end}}</h2>
-        <a href="http://localhost:8080/getCoffeeTime">指定時間の履歴</a>
-        <a href="http://localhost:8080/getCoffeeTimeDefault">デフォルト設定の履歴</a>
-        <a href="http://localhost:8080/main">メイン画面へ</a>
-        <div class="fuwafuwa"></div>
-
-       
-    </form>
+    <center>
+      
+      <div class="title">
+        <h1>時間指定画面</h1>
+      </div>
+      <form action="http://localhost:8080/handler" method="post">
+        <div class="selectTimes">
+          <div class="selectTime">
+            <label for="name">開始時間を入れてください →</label>
+            <input type="time" name="starttime" value="" list="data-list" required>
+          </div>
+          <div class="selectTime">
+            <label for="age">終了時間を入れてください →</label>
+            <input type="time" name="finishtime" value="" list="data-list" required>
+          </div>
+        </div>
+        <div class="validate">
+          <p>{{if .Message}}{{.Message}}{{end}}</p>
+        </div>
+          <fieldset>
+            <legend>デフォルトの時間設定 or 今日の指定の時間設定</legend>
+            <label><input type="radio" value="default" name="judgeDataForm" required>デフォルトの値で送信</label><br>
+            <label><input type="radio" value="assignment" name="judgeDataForm" required checked>指定の値で送信</label><br>          
+          </fieldset>
+  
+          <div id="container">
+            <button class="learn-more" type="submit">
+              <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="button-text">設定完了</span>
+            </button>
+          </div>
+          <div class="sadffas">
+            <a href="http://localhost:8080/getCoffeeTime">指定時間の履歴</a>
+          </div>
+          <div class="sadffas">
+            <a href="http://localhost:8080/getCoffeeTimeDefault">デフォルト設定の履歴</a>
+          </div>
+          <div class="sadffas">
+            <a href="http://localhost:8080/">メイン画面へ</a>
+          </div>
+      </form>
+    </center>
 
     <datalist id="data-list">
         <option value="06:00"></option>
