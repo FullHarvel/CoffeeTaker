@@ -8,7 +8,6 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"reflect"
 	"strconv"
 	"strings"
 	"time"
@@ -43,8 +42,6 @@ func setEnv() {
 	password = os.Getenv("PASSWORD")
 	dbname = os.Getenv("DBNAME")
 	accessToken = os.Getenv("ACCEESSTOKEN")
-
-	fmt.Println(reflect.TypeOf(port))
 }
 
 // メインの関数
@@ -69,6 +66,7 @@ func main() {
 	http.HandleFunc("/user", userTimeSelect)
 	http.HandleFunc("/userConfirm", userConfirm)
 
+	fmt.Println("start")
 	//サーバーを立てる
 	//マルチプレクサみたいなのを起動させてるのかな？
 	http.ListenAndServe("localhost:8080", nil)
@@ -76,8 +74,7 @@ func main() {
 
 // lineに通知を送る
 func sendLineMessage(message string) {
-	fmt.Println(accessToken)
-	fmt.Println("おいおいおい")
+
 	lineAccessToken := accessToken
 	//今日の日にちを取得
 	jst := time.FixedZone("Asia/Tokyo", 9*60*60)
@@ -128,7 +125,6 @@ func getUsersTime() ([]Record, error) {
 		r.Starttime = starttime
 		r.Finishtime = finishtime
 		records = append(records, r)
-		fmt.Println("指定した時間を使ってるよ")
 		return records, nil
 	}
 
@@ -150,9 +146,7 @@ func getUsersTime() ([]Record, error) {
 	if err := rows.Err(); err != nil {
 		return nil, fmt.Errorf("failed to get rows: %w", err)
 	}
-	fmt.Println("指定していなかった時間を使ってるよ")
 
-	fmt.Println(records)
 	return records, nil
 }
 
@@ -214,11 +208,8 @@ func changetime(starttime string, finishtime string) []string {
 	startIndex := makeTimeId(allTimes, starttime)
 	finishIndex := makeTimeId(allTimes, finishtime)
 
-	fmt.Println(starttime)
-	fmt.Println(finishtime)
 	result := getTime(allTimes, startIndex, finishIndex)
 
-	fmt.Println(result)
 	return result
 }
 
@@ -271,7 +262,6 @@ func isTodayData() (bool, string, string) {
 	// 今日の日本時間を取得
 	jst := time.FixedZone("Asia/Tokyo", 9*60*60)
 	now := time.Now().In(jst).Format("2006-01-02")
-	fmt.Println(now)
 
 	//データベースから追加した日付を取得
 	rows, err := db.Query("SELECT created_at, starttime, finishtime  FROM coffeetime order by id desc limit 1")
@@ -286,17 +276,12 @@ func isTodayData() (bool, string, string) {
 		if err := rows.Scan(&is_today_data.Today, &is_today_data.Starttime, &is_today_data.Finishtime); err != nil {
 			log.Fatal(err)
 		}
-		fmt.Println(is_today_data.Today.Format("2006-01-02"))
-		fmt.Println(is_today_data.Starttime)
-		fmt.Println(is_today_data.Finishtime)
 
 		if now == is_today_data.Today.Format("2006-01-02") {
-			fmt.Println("今日のデータはあったよ")
 			return true, is_today_data.Starttime, is_today_data.Finishtime
 		}
 	}
 
-	fmt.Println("今日のデータはなかったよ")
 	return false, "", ""
 }
 
@@ -346,12 +331,10 @@ func ConnectDB() (*sql.DB, error) {
 	//本当にサーバーと接続ができているか確認するもので
 	//Pingを送信しサーバーが応答しなかった場合は接続できていないとみなす
 	err = db.Ping()
-	fmt.Print(err)
 	if err != nil {
 		return nil, err
 	}
 
-	fmt.Println("データベース接続に成功しました")
 	return db, nil
 }
 
@@ -374,7 +357,6 @@ func InsertTimeData(db *sql.DB, tableName string, data1 string, data2 string) er
 	if err != nil {
 		return err
 	}
-	fmt.Printf("データベースに%sと%sの値を挿入しました", data1, data2)
 	return nil
 }
 
@@ -439,8 +421,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm() //フォームデータを使える形にする
 	//ここはname := r.FormValue("name")で受け取ることもできるみたい
 	judgeDataForm := r.Form.Get("judgeDataForm")
-	fmt.Println(judgeDataForm)
-	fmt.Println("おいおい")
+
 	starttime := r.Form.Get("starttime")
 	finishtime := r.Form.Get("finishtime")
 	tableName := convertTableName(judgeDataForm)
@@ -483,7 +464,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	//テンプレートに入れる値は構造体に値を当てはめ込んだやつのkeyの方がテンプレートの値と一致している必要がある
 	p := Time{Starttime: starttime, Finishtime: finishtime}
-	fmt.Println(p)
 	err = tmpl.Execute(w, p)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -513,7 +493,6 @@ func Coffeetime(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(records)
 
 	//テンプレート作成
 	tmpl, err := template.ParseFiles("timeSelect.html")
@@ -525,7 +504,6 @@ func Coffeetime(w http.ResponseWriter, r *http.Request) {
 	if err := tmpl.Execute(w, records); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("ここまで行ったらデータベース取得できてます")
 }
 
 // データベースから取得してきた値を表示
@@ -537,7 +515,6 @@ func coffeetime_default(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(records)
 
 	//テンプレート作成
 	tmpl, err := template.ParseFiles("timeSelect.html")
@@ -549,7 +526,6 @@ func coffeetime_default(w http.ResponseWriter, r *http.Request) {
 	if err := tmpl.Execute(w, records); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("ここまで行ったらデータベース取得できてます")
 }
 
 // ユーザ画面を作成
