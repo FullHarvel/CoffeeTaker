@@ -34,6 +34,7 @@ func setEnv() {
 		os.Exit(1)
 	}
 
+	//
 	// 環境変数をグローバル変数に格納する
 	//port変数もstring型になっているので使う場合はint型として変数に入れて使う必要がある
 	host = os.Getenv("HOST")
