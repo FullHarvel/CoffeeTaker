@@ -12,12 +12,6 @@ body{
     background-image: url(../img/back.png);
 }
 
-.time{
-    color: rgb(55, 187, 239);
-    font-size: 38px;
-    font-weight: 700;
-}
-
 a{
     text-decoration: none;
 }

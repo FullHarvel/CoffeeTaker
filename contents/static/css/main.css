@@ -61,25 +61,6 @@ a {
     background-color:rgba(0, 0, 0, 0.56) ;
   }
 
- 
-a.btn{
-    padding: 0.5em;
-    border-radius: 3rem;
-  }
-  a.btn:before {
-    content: "";
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: url("../Icon/bell.png") no-repeat;
-    background-size: contain;
-    vertical-align: middle;
-    background-position: right;
-
-  }
-  a.btn:hover {
-    background: #bcf50072;
-  }
 
 
 /* レスポンシブ対応 */
