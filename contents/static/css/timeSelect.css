@@ -1,5 +1,4 @@
 body{
-    margin: 50px;
     background-color: #f4f2db;
     text-align: center;
 }
@@ -36,7 +35,6 @@ body{
  }
 
  .contents{
-    margin:100px;
     border-bottom: 4px solid rgb(0, 255, 0);
  }
 
@@ -78,3 +76,4 @@ body{
 	background-color: #f4f2db;
 	transform: translate3d(0, 0, -30px) rotateX(90deg);
 }
+

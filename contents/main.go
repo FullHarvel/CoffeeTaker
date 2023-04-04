@@ -53,7 +53,7 @@ func main() {
 
 	fmt.Println("start")
 
-	http.ListenAndServe("localhost:8080", nil)
+	http.ListenAndServe(":8080", nil)
 }
 
 func sendLineMessage(message string) {
