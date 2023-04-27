@@ -61,7 +61,7 @@ func sendLineMessage(message string) {
 	lineAccessToken := accessToken
 	jst := time.FixedZone("Asia/Tokyo", 9*60*60)
 	now := time.Now().In(jst).Format("2006-01-02")
-	lineMessage := now + "日の" + message + "時間に予約が入りました。"
+	lineMessage := now + "日の" + message + "に予約が入りました。"
 	URL := "https://notify-api.line.me/api/notify"
 
 	u, err := url.ParseRequestURI(URL)
@@ -272,6 +272,7 @@ func ConnectDB() (*sql.DB, error) {
 		return nil, err
 	}
 
+	fmt.Println(db)
 	err = db.Ping()
 	if err != nil {
 		return nil, err
