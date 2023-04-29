@@ -24,7 +24,7 @@ https://user-images.githubusercontent.com/95427365/235278049-4faddd12-8c08-4bfa-
 
 - Line通知
 
-![IMG_7680](https://user-images.githubusercontent.com/95427365/235278239-9942ad84-3365-4fb0-9fe1-2e1d08666566.jpg)
+![IMG_7680 2](https://user-images.githubusercontent.com/95427365/235278322-5fa384d4-32f7-4d94-821b-fd92413318a8.jpg)
 
 
   
