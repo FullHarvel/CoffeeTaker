@@ -22,6 +22,10 @@ https://user-images.githubusercontent.com/95427365/235277516-fedf9888-fec1-4323-
 
 https://user-images.githubusercontent.com/95427365/235278049-4faddd12-8c08-4bfa-95b5-95db21f7fae5.mp4
 
+- Line通知
+
+![IMG_7680](https://user-images.githubusercontent.com/95427365/235278239-9942ad84-3365-4fb0-9fe1-2e1d08666566.jpg)
+
 
   
   ## 注意点
@@ -58,7 +62,7 @@ https://user-images.githubusercontent.com/95427365/235278049-4faddd12-8c08-4bfa-
 	  starttime varchar(30),
 	  finishtime varchar(30));
     ```
-  - lineのアクセストークンの取得→[アクセストークン取得方法はこちらのサイトを参考にしています。](https://firestorage.jp/business/line-notify/)
+  - lineのアクセストークンの取得→[アクセストークン取得方法はこちらのサイトを参考にしています。](https://www.itd-blog.jp/entry/line-token)
   - contentsディレクトリに.envファイルを作成
   - 環境変数のHOST(データベースのホスト名)、PORT(データベースのポート名)、USER(データベースのユーザ名)、PASSWORD(データベースのパスワード)、DBNAME(データベース名)、ACCESSTOKEN(後にLineで取得するアクセストークン)
   - githubからpostgresqlと環境変数を使うためのライブラリを取得する。
