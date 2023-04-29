@@ -9,7 +9,7 @@
   
   ## デモ
   - PC
-    [label](demoVideo/PcDemoVideo.mov)
+    [label](demoVideo/PcDemoVideo.mp4)
   - 携帯
      [label](demoVideo/SmpDemoVideo.MP4)
   ## 注意点
