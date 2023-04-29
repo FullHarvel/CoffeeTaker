@@ -9,10 +9,9 @@
   
   ## デモ
   - PC
-  <video src="./demoVideo/PcDemoVideo.mov" controls></video>
+    [label](demoVideo/PcDemoVideo.mov)
   - 携帯
-  <video src="./demoVideo/SmpDemoVideo.MP4" controls></video>
-  
+     [label](demoVideo/SmpDemoVideo.MP4)
   ## 注意点
   時間を指定する場合はモバイル端末で行うとエラーが起きる可能性があります。
   
