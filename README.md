@@ -9,11 +9,7 @@
   
   ## デモ
   - PC
-  
-
-https://user-images.githubusercontent.com/95427365/235275829-a0bbca6c-f579-426a-9a7a-feb8b7e1fe6f.mp4
-
-
+	https://user-images.githubusercontent.com/95427365/235275829-a0bbca6c-f579-426a-9a7a-feb8b7e1fe6f.mp4
   - 携帯
   
   ## 注意点
