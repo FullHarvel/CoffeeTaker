@@ -90,7 +90,7 @@ https://user-images.githubusercontent.com/95427365/235278049-4faddd12-8c08-4bfa-
 	  starttime varchar(30),
 	  finishtime varchar(30));
     ```
-  - lineのアクセストークンの取得→[アクセストークン取得方法はこちらのサイトを参考にしています。](https://firestorage.jp/business/line-notify/)
+  - lineのアクセストークンの取得→[アクセストークン取得方法はこちらのサイトを参考にしています。](https://www.itd-blog.jp/entry/line-token)
   - contentsディレクトリに.envファイルを作成
   - 環境変数のHOST(データベースのホスト名)、PORT(データベースのポート名)、USER(データベースのユーザ名)、PASSWORD(データベースのパスワード)、DBNAME(データベース名)、ACCESSTOKEN(後にLineで取得するアクセストークン)
   - modファイルの作成
