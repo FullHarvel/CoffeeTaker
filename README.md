@@ -11,9 +11,19 @@
   - PC
  
 
-https://user-images.githubusercontent.com/95427365/235276721-a5336f09-01de-4e0d-adc5-c5845cd15c7c.mp4
+
+https://user-images.githubusercontent.com/95427365/235277516-fedf9888-fec1-4323-be3c-559011bc7080.mp4
 
 
+
+  - モバイル
+  
+  
+
+https://user-images.githubusercontent.com/95427365/235278049-4faddd12-8c08-4bfa-95b5-95db21f7fae5.mp4
+
+
+  
   ## 注意点
   時間を指定する場合はモバイル端末で行うとエラーが起きる可能性があります。
   
