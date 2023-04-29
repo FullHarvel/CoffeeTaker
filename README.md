@@ -10,8 +10,7 @@
   ## デモ
   - PC
 	https://user-images.githubusercontent.com/95427365/235275829-a0bbca6c-f579-426a-9a7a-feb8b7e1fe6f.mp4
-  - 携帯
-  
+ 
   ## 注意点
   時間を指定する場合はモバイル端末で行うとエラーが起きる可能性があります。
   
